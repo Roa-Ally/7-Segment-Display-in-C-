@@ -25,14 +25,196 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
     for (int i = 0; i < size; ++i) {
     {
         switch (pos_int) {
+            case 1:
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf(" ");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf(" ");
+                }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf(" ");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+
+                }
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf(" ");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf(" ");
+                }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf(" ");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+                }
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf(" ");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf(" ");
+                }
+                printf(" "" \n");
+                break;
+
+            case 2:
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf(" ");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+
+                }
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+
+                for (int k = 0; k < vertical ; ++k) {
+                    printf("**\n");
+                }
+
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                break;
+            case 3:
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf(" ");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+
+                }
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf(" ");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+                }
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                break;
+
+
             case 8:
                 printf(" "" ");
                 for (int i = 0; i < horizontal; ++i) {
                     printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
                     printf("*");
                 }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf("**");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+
+                }
                 printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                for (int k = 0; k < vertical ; ++k) {
+                    printf("**");
+                    for (int j = 0; j < horizontal; ++j) {
+                        printf(" ");
+                    }
+                    printf("**\n");
+                }
+                printf(" "" ");
+                for (int i = 0; i < horizontal; ++i) {
+                    printf("*");
+                }
+                printf(" "" \n");
+                printf(" "" ");
+                for (int j = 0; j < horizontal; ++j) {
+                    printf("*");
+                }
+                printf(" "" \n");
                 break;
+
             default:
                 printf(" ");
                 break;
@@ -117,7 +299,7 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
                 }
 
 
-            while (1) {
+            while (string_int ) {
                 printf("Please enter a positive integer\n");
                 fflush(stdout);
                 input_error_int = pos_int = 0;
@@ -136,8 +318,6 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
                         break;
                     } else
                         pos_int = 10 * pos_int + (string_int[i] - '0');
-                    if (input_error_int)
-                        break;
 
                 }
                 if (input_error_int)//if an error found in user's input
@@ -153,7 +333,7 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
         }
         int *array;
         split(pos_int, &array);
-        seven_segment_print(pos_int,segment_height,segment_width,&array);
+        seven_segment_print(pos_int,segment_width,segment_height,&array);
 
     }
 
