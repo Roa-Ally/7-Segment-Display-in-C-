@@ -1,29 +1,24 @@
 #define MAX_LEN 100
 #include<stdio.h>
-#include<ctype.h>
 #include<stdlib.h>
 #include <math.h>
 
-void split(int pos_int, int **array) {
-    int length = (int)ceil(log10(pos_int)) + 1;
-    int i = 0;
-    int new_num = pos_int;
-
-    *array = (int *) malloc(length * sizeof(int));
-
-    while (new_num != 0) {
-        (*array)[i] = new_num % 10;
-        new_num /= 10;
-        i++;
-
+int * toArray(int number)
+{
+    int n = log10(number) + 1;
+    int i;
+    int *numberArray = calloc(n, sizeof(int));
+    for ( i = 0; i < n; ++i, number /= 10 )
+    {
+        numberArray[i] = number % 10;
     }
 
 }
-void seven_segment_print(int pos_int, int horizontal, int vertical, int **array) {
-    int size = sizeof(array) / sizeof(array[0]);
+void seven_segment_print(int pos_int, int horizontal, int vertical, int **numberArray) {
+    int size = sizeof(numberArray) / sizeof(numberArray[0]);
 
     for (int i = 0; i < size; ++i) {
-    {
+
         switch (pos_int) {
             case 1:
                 printf(" "" ");
@@ -222,7 +217,7 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
         }
     }
     }
-}
+
     void main(void) {
         printf("This is a 7-segment display! Press \"Enter\" after providing any number in keyboard.\n");
         fflush(stdout);
@@ -299,7 +294,7 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
                 }
 
 
-            while (string_int ) {
+            while (1) {
                 printf("Please enter a positive integer\n");
                 fflush(stdout);
                 input_error_int = pos_int = 0;
@@ -325,15 +320,15 @@ void seven_segment_print(int pos_int, int horizontal, int vertical, int **array)
                 if (pos_int < 0 || input_error_int) {
                     printf("The given value is not acceptable!\n");
                     fflush(stdout);
-                    continue;
+                    break;
                 } else
                     break;
             }
-            break;
+            int *numberArray;
+            toArray(pos_int);
+            seven_segment_print(pos_int, segment_width, segment_height, &numberArray);
         }
-        int *array;
-        split(pos_int, &array);
-        seven_segment_print(pos_int,segment_width,segment_height,&array);
+
 
     }
 
